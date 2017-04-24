@@ -35,6 +35,12 @@ Route::get('/image/{filename}', function($filename){
     return $response;
 });
 
+Route::get('/image/list', function(){
+	foreach(glob("/var/www/html/public/image/") as $file){
+		echo "-> " . $file;
+	}
+});
+
 /*
 	{variable}
 	{optionalVariable?}
